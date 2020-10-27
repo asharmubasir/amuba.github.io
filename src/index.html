@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <title>Calendly</title>
+</head>
+<body>
+
+  <main class="container">
+    
+    <h1>Calendly</h1>
+
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Product</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option value="pcr">PCR</option>
+          <option value="rapid">Rapid</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Schedule</label>
+        <select class="form-control" id="schedule" onclick="
+          let product = document.getElementById('exampleFormControlSelect1');
+          if(product.value == 'pcr'){
+            Calendly.initPopupWidget({url: 'https://calendly.com/roger-86-1/pcr-test'});return false;
+          }else{
+            Calendly.initPopupWidget({url: 'https://calendly.com/roger-86-1/rapid-test'});return false;
+          }
+        ">
+        </select>
+      </div>
+    </form>
+
+
+  </main>
+
+  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+</body>
+</html>
