@@ -3,22 +3,19 @@ const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
     mode: "production",
-    output: {
-      publicPath: '/MEDISTRAN-demo/'
-    },
     module: {
-      rules: [
-        {
-          test: /\.js$/,
-          use: [
+        rules: [
             {
-              loader: "babel-loader",
-              options: {
-                presets: ["@babel/preset-env"]
-              }
-            } 
-          ]
-        }
-      ]
+                test: /\.js$/,
+                use: [
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            presets: ["@babel/preset-env"]
+                        }
+                    }
+                ]
+            }
+        ]
     }
 });
